@@ -22,3 +22,5 @@ def forward_algorithm(O,H,oberserved,start):
     for idx in range(len(oberserved)):
         for state in H.keys():
             print(state,'->',oberserved[idx],':',forward_impl(idx,state))
+    
+    # return prev_probs

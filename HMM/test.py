@@ -1,4 +1,5 @@
 import forward_algorithm
+import viterbi_algorithm
 
 observed_prob={
     'hot':{'1':0.2,'2':0.4,'3':0.4},
@@ -14,4 +15,7 @@ hide_prob={
 observed1=['3','1','3']
 observed2=['3','3','1','1','2','2','3','1','3']
 
-forward_algorithm.forward_algorithm(observed_prob,hide_prob,observed2,start=start_prob)
+# forward_algorithm.forward_algorithm(observed_prob,hide_prob,observed2,start=start_prob)
+
+probs = viterbi_algorithm.viterbi(observed_prob,hide_prob,observed1,start=start_prob)
+print(probs)
