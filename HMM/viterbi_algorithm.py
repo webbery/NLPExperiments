@@ -23,9 +23,5 @@ def viterbi(O,H,oberserved,start):
     
     probs=[]
     for t in range(len(oberserved)):
-        for state,H_probs in H.items():
-            item={}
-            item['desc']=state+'->'+oberserved[t]
-            item['probability']=viterbi_impl(t,state)
-            probs.append(item)
+        probs.append(max([(state+'->'+oberserved[t],viterbi_impl(t,state)) for state in H.keys()],key=lambda x:x[1]))
     return probs
